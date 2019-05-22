@@ -37,7 +37,7 @@ vynechaneSlovo = int(input("Zadejte, kolikáté slovo chcete vynechat: "))
 #f.closed
 
 #print(text)
-def uprava Textu(text):
+def upravaTextu(text):
 	text = text.replace("\n", "# ")
 	seznam = []
 	seznam = text.split(" ")
@@ -48,20 +48,20 @@ def uprava Textu(text):
 		slovo = seznam[i]
 		slovoUpraveno = ""
 		if((i + 1) % vynechaneSlovo == 0):
-		for pismeno in slovo:
-			if pismeno not in interpunkce:
-				slovoUpraveno += "*"
-			else:
-				slovoUpraveno += pismeno
-		vysledek.append(slovoUpraveno)
-	else:
-		vysledek.append(slovo)
+			for pismeno in slovo:
+				if pismeno not in interpunkce:
+					slovoUpraveno += "*"
+				else:
+					slovoUpraveno += pismeno
+			vysledek.append(slovoUpraveno)
+		else:
+			vysledek.append(slovo)
 
-s=" ".join(vysledek)
-s=s.replace("#", "\n")
-print(s)
+	s=" ".join(vysledek)
+	s=s.replace("#", "\n")
+	print(s)
 
-jesoubor = os.path.isfile(vstup)
+jeSoubor = os.path.isfile(vstup)
 if jeSoubor:
 	with open(vstup) as f:
 		vstup = f.read()
